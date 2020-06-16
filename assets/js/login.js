@@ -42,7 +42,10 @@ $(function() {
             success : function(res) {
                 if(res.status === 0) {
                     // console.log(res.message);
-                    location.href = 'index.html'
+                    layer.msg(res.message)
+                    setTimeout(function() {
+                        location.href = 'index.html'
+                    },1000)
                 }
             }
         })  
