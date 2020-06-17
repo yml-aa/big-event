@@ -19,9 +19,7 @@ $(function() {
             // 跳转到登陆页面
             location.href = './login.html'
         });
-    })
-
-    // 加载时需要获取调用后台接口和用户信息
+    })    // 加载时需要获取调用后台接口和用户信息
     function loadUserInfo() {
         $.ajax({
             type : 'get',
