@@ -43,9 +43,13 @@ $(function() {
                 if(res.status === 0) {
                     // console.log(res.message);
                     layer.msg(res.message)
+                    // 将token保存到本地
+                    localStorage.setItem('mytoken',res.token)
                     setTimeout(function() {
-                        location.href = 'index.html'
+                        location.href = './index.html'
                     },1000)
+                }else {
+                    layer.msg(res.message)
                 }
             }
         })  
