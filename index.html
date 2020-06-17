@@ -23,8 +23,8 @@
     <ul class="layui-nav layui-layout-right">
       <li class="layui-nav-item">
         <a href="javascript:;" class="welcome">
-        <span class="text-avatar avatar">M</span>
-          个人中心
+        <div>M</div>
+        <span><span id="nav-username"></span></span>
         </a>
         <dl class="layui-nav-child">
           <dd><a href="">基本资料</a></dd>
@@ -39,10 +39,10 @@
   <div class="layui-side layui-bg-black">
     <div class="layui-side-scroll">
       <!-- 顶部欢迎语 -->
-      <div class="userInfo">
-        <span class="text-avatar avatar">M</span>
-        <span>欢迎<span></span></span>
-      </div>
+      <a href="JavaScript:;" class="welcome">
+        <div>L</div>
+        <span>欢迎 <span id="wel-username"></span> </span>
+      </a>
       <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
       <!-- lay-shrink 控制菜单手风琴效果(排他思想) -->
       <ul class="layui-nav layui-nav-tree"  lay-filter="test" lay-shrink="all">

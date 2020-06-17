@@ -4,24 +4,28 @@
 .layui-icon {
     margin: 0 10px;
 }
-.text-avatar {
-    display: inline-block;
-    width: 40px;
-    height: 40px;
-    background-color: #009688;
-    border-radius: 50%;
-    vertical-align: middle;
-    line-height: 40px;
-    text-align: center;
+.welcome {
     color: #fff;
-    font-size: 20px;
-    margin-right: 10px;
-}
-.userInfo {
+    display: block;
     height: 60px;
-    line-height: 60px;
     text-align: center;
+  }
+.welcome img {
+    height: 32px;
+    margin: 14px;
+    border-radius: 50%;
 }
+  .welcome div {
+    display: inline-block;
+    height: 32px;
+    width: 32px;
+    margin: 14px;
+    background: #00988B;
+    border-radius: 16px;
+    text-align: center;
+    line-height: 32px;
+    vertical-align: middle;
+  }
 .layui-body iframe {
     width: 100%;
     height: 100%;
