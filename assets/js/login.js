@@ -49,12 +49,8 @@ $(function() {
                     // 将token保存到本地
                     localStorage.setItem('mytoken',res.token)
                     setTimeout(function() {
-<<<<<<< HEAD
                         // location是BOM对象 location.href可以实现页面跳转
                         location.href = 'index.html'
-=======
-                        location.href = './index.html'
->>>>>>> index
                     },1000)
                 }else {
                     layer.msg(res.message)
