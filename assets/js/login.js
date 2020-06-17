@@ -48,7 +48,7 @@ $(function() {
                     layer.msg(res.message)
                     setTimeout(function() {
                         // location是BOM对象 location.href可以实现页面跳转
-                        // location.href = 'index.html'
+                        location.href = 'index.html'
                     },1000)
                 }
             }
