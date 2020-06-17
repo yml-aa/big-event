@@ -22,8 +22,8 @@
     <!-- 导航右侧菜单 -->
     <ul class="layui-nav layui-layout-right">
       <li class="layui-nav-item">
-        <a href="javascript:;">
-          <img src="http://t.cn/RCzsdCq" class="layui-nav-img">
+        <a href="javascript:;" class="welcome">
+        <span class="text-avatar avatar">M</span>
           个人中心
         </a>
         <dl class="layui-nav-child">
@@ -32,18 +32,31 @@
           <dd><a href="">重置密码</a></dd>
         </dl>
       </li>
+<<<<<<< HEAD
       <li class="layui-nav-item"><a href=""><span class="iconfont icon-tuichu"></span>退出</a></li>
+=======
+      <li class="layui-nav-item"><a href="JavaScript:;" id="logout"><span class="iconfont icon-tuichu"></span>退出</a></li>
+>>>>>>> index
     </ul>
   </div>
   <!-- 左侧菜单栏 -->
   <div class="layui-side layui-bg-black">
     <div class="layui-side-scroll">
-        <!-- 用户中心 -->
-        <div class="userInfo" style="height: 60px;background-color: pink;"></div>
+      <!-- 顶部欢迎语 -->
+      <div class="userInfo">
+        <span class="text-avatar avatar">M</span>
+        <span>欢迎<span></span></span>
+      </div>
       <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
+      <!-- lay-shrink 控制菜单手风琴效果(排他思想) -->
       <ul class="layui-nav layui-nav-tree"  lay-filter="test" lay-shrink="all">
           <!-- 首页 -->
+<<<<<<< HEAD
         <li class="layui-nav-item layui-nav-itemed">
+=======
+          <!-- layui-this 控制菜单高亮 -->
+        <li class="layui-nav-item layui-nav-itemed layui-this">
+>>>>>>> index
           <a class="" href="javascript:;"><span class="iconfont icon-home"></span>首页</a>
         </li>
         <!-- 文章管理 -->
