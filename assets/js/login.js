@@ -28,6 +28,7 @@ $(function() {
         $('#form-reg2').show()
     })
     // 获取输入框的内容
+    // 登陆界面
     $('#form-reg1').submit(function(e) {
         // 事件对象 阻止默认行为
         e.preventDefault()
@@ -42,9 +43,12 @@ $(function() {
             success : function(res) {
                 if(res.status === 0) {
                     // console.log(res.message);
+                    // 将登陆成功的表示缓存起来
+                    localStorage.setItem('mytoken',res.token)
                     layer.msg(res.message)
                     setTimeout(function() {
-                        location.href = 'index.html'
+                        // location是BOM对象 location.href可以实现页面跳转
+                        // location.href = 'index.html'
                     },1000)
                 }
             }
@@ -52,10 +56,12 @@ $(function() {
     })
 
     // 点击立即提交按钮
+    // 注册界面
     $('#form-reg2').submit(function(e) {
         // alert('111');
         e.preventDefault();
         // 获取输入框的数据
+        // 获取表单数据 (表单输入域必须提供name属性 name的值必须和接口文档要求一致)
         var formData1 = $(this).serialize()  
         // 将输入框的数据提交到后台
         $.ajax({
