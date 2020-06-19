@@ -19,14 +19,14 @@
     setFont();
 
     // 页面改变尺寸的时候也需要设置
-    window.onresize = function() {
-        setFont();
-        myChart.resize();
-        myChart1.resize();
-    }
+    // window.onresize = function() {
+    //     setFont();
+    //     myChart.resize();
+    //     myChart1.resize();
+    // }
 })(); //此处要加分号
 // 全局变量
-var myChart,myChart1
+var myChart,myChart1,myChart2
 $(function() {
     // 折线图
     (function() {
@@ -71,7 +71,7 @@ $(function() {
             count.push(dom.count)
             data.push(dom.date)
         })
-        console.log(count);
+        // console.log(count);
         // 配置
         var option = {
             // 标题文字居中
@@ -132,20 +132,24 @@ $(function() {
                 // 平滑曲线显示
                 smooth: true,
                 itemStyle: {
-                    borderColor : '#f80'
+                    normal: {
+                        color: '#f80'
+                    },
                 },
                 //区域填充样式 渐变 设置 areaStyle 后可以绘制面积图。
                 areaStyle: {
-                    color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
-                        offset: 0,
-                        color: 'rgba(255,136,0,0.39)'
-                    }, {
-                        offset: .34,
-                        color: 'rgba(255,180,0,0.25)'
-                    }, {
-                        offset: 1,
-                        color: 'rgba(255,222,0,0.00)'
-                    }])
+                    normal: {
+                        color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+                            offset: 0,
+                            color: 'rgba(255,136,0,0.39)'
+                        }, {
+                            offset: .34,
+                            color: 'rgba(255,180,0,0.25)'
+                        }, {
+                            offset: 1,
+                            color: 'rgba(255,222,0,0.00)'
+                        }])
+                    }
                 },
                 data: count,
             }],
@@ -221,7 +225,7 @@ $(function() {
 
     // 柱状图
     (function() {
-        var myChart2 = echarts.init($('.bar')[0]);
+        myChart2 = echarts.init($('.bar')[0]);
         var option = {
             // 标题
             title: {

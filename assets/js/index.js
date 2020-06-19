@@ -24,12 +24,9 @@ $(function() {
         $.ajax({
             type : 'get',
             // 请求地址
-            url : 'http://ajax.frontend.itheima.net/my/userinfo',
-            headers : {
-                Authorization:localStorage.getItem('mytoken')
-            },
+            url : '/my/userinfo',
             success : function(res) {
-                console.log(res);
+                // console.log(res);
                 if(res.status === 0) {
                     // 获得用户的信息
                     var userData = res.data

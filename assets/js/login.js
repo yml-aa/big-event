@@ -38,7 +38,7 @@ $(function() {
         // 将得到的输入框数据发送到后台
         $.ajax({
             type : 'post',
-            url : 'http://ajax.frontend.itheima.net/api/login',
+            url : '/api/login',
             data : formData,
             success : function(res) {
                 if(res.status === 0) {
@@ -70,7 +70,7 @@ $(function() {
         // 将输入框的数据提交到后台
         $.ajax({
             type : 'post',
-            url : 'http://ajax.frontend.itheima.net/api/reguser',
+            url : '/api/reguser',
             data : formData1,
             success : function(res) {
                 if(res.status != 0) {
