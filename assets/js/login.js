@@ -45,7 +45,7 @@ $(function() {
                     // console.log(res.message);
                     // 将登陆成功的表示缓存起来
                     localStorage.setItem('mytoken',res.token)
-                    layer.msg(res.message)
+                    layer.msg('登录成功')
                     // 将token保存到本地
                     localStorage.setItem('mytoken',res.token)
                     setTimeout(function() {
@@ -53,7 +53,7 @@ $(function() {
                         location.href = 'index.html'
                     },1000)
                 }else {
-                    layer.msg(res.message)
+                    layer.msg('登录失败')
                 }
             }
         })  
@@ -74,7 +74,7 @@ $(function() {
             data : formData1,
             success : function(res) {
                 if(res.status != 0) {
-                    return layer.msg(res.message)
+                    return layer.msg('注册失败')
                 }
                 layer.msg('注册成功，请登录！')
                 $('#link-login').click()
