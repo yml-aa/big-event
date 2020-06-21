@@ -19,7 +19,9 @@ $(function() {
             // 跳转到登陆页面
             location.href = './login.html'
         });
-    })    // 加载时需要获取调用后台接口和用户信息
+    })    
+
+    // 加载时需要获取调用后台接口和用户信息
     function loadUserInfo() {
         $.ajax({
             type : 'get',
@@ -38,9 +40,16 @@ $(function() {
                     // userData.user_pic = 'http://t.cn/RCzsdCq'
                     // 如果存在头像 显示一张照片
                     if(userData.user_pic){
-                        $('#wel-username').parent().prev('div').remove()
+                        $('#wel-username')
+                        .parent()
+                        .find('img') //找到img这个元素
+                        .remove() //然后删除掉
+                        .end() //end 是退回到上级元素 就是parent
+                        .prev('div').remove()
                         $('#wel-username').parent().prepend('<img src="'+userData.user_pic+'" alt="" />')
-                        $('#nav-username').parent().prev('div').remove()
+                        $('#nav-username')
+                        .parent().find('img').remove().end()
+                        .prev('div').remove()
                         $('#nav-username').parent().prepend('<img src="'+userData.user_pic+'" alt="" />')
                     }
                 }
@@ -48,4 +57,6 @@ $(function() {
         })
     }
     loadUserInfo()
+    // 把加载用户信息的方法添加到$对象上
+    $.loadUserInfo = loadUserInfo
 })
