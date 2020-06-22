@@ -110,4 +110,9 @@ $(function() {
             })
         })
     })
+
+    // 点击编辑按钮
+    $('body').on('click','.edit',function() {
+        location.href = '/article/edit.html?id=' + $(this).attr('data-id')
+    })
 })
