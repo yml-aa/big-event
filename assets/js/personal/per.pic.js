@@ -38,8 +38,8 @@ $(function() {
     var newImgURL = URL.createObjectURL(file)
     // 将获得到的地址更新到src的属性上 更新之前先将之前的裁剪区域销毁
     $image.cropper('destroy')  //销毁之前的剪裁区域
-            .attr('src',newImgURL)  //更新图片的路径
-            .cropper(options) //更新新的预览区域
+          .attr('src',newImgURL)  //更新图片的路径
+          .cropper(options) //更新新的预览区域
     })
 
     // 点击确认按钮 得到选框中的图片 将剪裁好的图片上传到服务器 更新用户头像
