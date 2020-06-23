@@ -1,9 +1,7 @@
 $(function() {
     // 通过 URLSearchParams 对象，获取 URL 传递过来的参数
     var params = new URLSearchParams(location.search)
-    var artId = params.get('id')
-    // 文章的发布状态
-    var pubState = ''
+    var id = params.get('id')
     
     // 导入表单对象
     var form = layui.form
@@ -35,9 +33,9 @@ $(function() {
         // 发送请求
         $.ajax({
             type: 'get',
-            url: '/my/article/' + artId,
+            url: '/my/article/' + id,
             data: {
-                id: artId,
+                id: id,
             },
             success: function(res) {
                 console.log(res);
@@ -123,11 +121,7 @@ $(function() {
             // 像fd中继续添加新的数据
             fd.append('state',state)
             fd.append('cover_img',blob)
-            // console.log(fd.get('title'))
-            // console.log(fd.get('cate_id'))
-            // console.log(fd.get('content'))
-            // console.log(fd.get('cover_img'))
-            // console.log(fd.get('state'))
+            fd.append('Id',id)
             // 调用接口 提交表单
             $.ajax({
                 type: 'post',
@@ -140,9 +134,7 @@ $(function() {
                 success: function(res) {
                     if(res.status === 0) {
                         layer.msg(res.message)
-                        location.href = './publish.js'
-                        // // 清空表单 [0]表示把jq转成dom对象
-                        // $('#add-form')[0].reset()
+                        location.href = './list.html'
                     }
                 }
             })

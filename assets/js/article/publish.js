@@ -1,6 +1,4 @@
 $(function() {
-<<<<<<< HEAD
-=======
     // 导入表单对象
     var form = layui.form
     // 初始化下拉选框
@@ -69,13 +67,10 @@ $(function() {
             state = '草稿'
         }
     })
-
->>>>>>> article
     // 给提交按钮添加点击事件
     $('#add-form').submit(function(e) {
         // 阻止事件的默认行为
         e.preventDefault()
-<<<<<<< HEAD
         // console.log(111);
         // 获取表单的数据
         var fd = new FormData(this)
@@ -95,46 +90,6 @@ $(function() {
                     layer.msg(res.message)
                 }
             }
-=======
-          // 生成文章封面图片
-        $img
-            .cropper('getCroppedCanvas', { 
-                // 创建一个 Canvas 画布
-                width: 400,
-                height: 280
-            })
-        .toBlob(function(blob) {
-            // 生成一张图片 用于上传操作
-            // 获取表单元素
-            var form = $('#add-form').get(0)
-            var fd = new FormData(form)
-            // 像fd中继续添加新的数据
-            fd.append('state',state)
-            fd.append('cover_img',blob)
-            // console.log(fd.get('title'))
-            // console.log(fd.get('cate_id'))
-            // console.log(fd.get('content'))
-            // console.log(fd.get('cover_img'))
-            // console.log(fd.get('state'))
-            // 调用接口 提交表单
-            $.ajax({
-                type: 'post',
-                url: '/my/article/add',
-                data: fd,
-                // 防止把请求参数转换为字符串
-                processData: false,
-                // 禁止使用默认的提交参数类型
-                contentType: false,
-                success: function(res) {
-                    if(res.status === 0) {
-                        layer.msg(res.message)
-                        // 清空表单 [0]表示把jq转成dom对象
-                        $('#add-form')[0].reset()
-
-                    }
-                }
-            })
->>>>>>> article
         })
     })
 })
