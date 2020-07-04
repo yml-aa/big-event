@@ -1,6 +1,6 @@
 // 通用的配置
 // 通过地址
-var baseURL = 'http://www.liulongbin.top:3007'
+var baseURL = 'http://localhost:3000'
 // ajaxPrefilter()函数用于指定预先处理Ajax参数选项的回调函数
 $.ajaxPrefilter(function(option) {
     // 形参option是jq请求方法的配置信息

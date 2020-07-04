@@ -1,9 +1,10 @@
 $(function() {
     var form = layui.form
+    var laypage = layui.laypage;
     // 当前页码
     var pagenum = 1
     // 每页显示的条数
-    var pagesize = 10
+    var pagesize = 3
 
     // 调用获取文章分类列表接口
     $.ajax({
@@ -50,6 +51,36 @@ $(function() {
                 var result = template('table-tpl',res)
                 // 将数据渲染到页面上
                 $('.layui-table tbody').html(result)
+                // 初始化分页效果
+                laypage.render({
+                    // articlePage是id
+                    elem: 'articlePage',
+                    // 当前页码
+                    curr: pagenum,
+                    // 数据总数
+                    count: res.total,
+                    // 每页显示的条数
+                    limit: pagesize,
+                    // 每页显示条数列表
+                    limits: [3,6,9,10],
+                      // 分页条布局效果
+                    layout: ['prev', 'page', 'next', 'skip', 'count', 'limit'],
+                    // 页吗切换时触发的动作
+                    jump: function(obj,first) {
+                        // obj表示分页的所有参数 first用于判断首次加载
+                        // 点击触发需要修改当前的页面
+                        pagenum = obj.curr,
+                        pagesize = obj.limit
+                        // 重新加载数据接口
+                        if(!first) {
+                            listData({
+                                pagenum: pagenum,
+                                // 每页显示多少条数据
+                                pagesize: pagesize
+                            })
+                        }
+                    }
+                })
             }
         })
     }
